@@ -1,27 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
+
+//function use in react is render()
+//react component have more than render() -> life cycle method
+//react create and kill component
+
+//mounting -> constructor()
+//updating
+//unmounting -> change page, use ohter component etc
 
 //state is about data that changes -> dynamic data
-
-function Food({ name, image, rating }) {
-  // props 바로 접근 instead of props.fav
-  return (
-    <div>
-      <h1> I like {name} </h1>
-      <h4> {rating}/5.0</h4>
-      <img src={image} alt={name} />
-    </div>
-  );
-}
-
-Food.propTypes = {
-  // typechecking with proptypes
-  // name(food.~~~) should be proptypes
-  name: PropTypes.string.isRequired,
-  picture: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
-};
-
 class App extends React.Component {
   state = {
     // state is object -> data that will change
@@ -39,7 +26,21 @@ class App extends React.Component {
       count: current.count - 1,
     })); // recommended 함수 이름이 없는 화살표 함수로 한문장이기때문에 {}역시 생략했다.
   };
+
+  componentDidMount() {
+    console.log("component rendered");
+  }
+
+  componentDidUpdate() {
+    console.log("i just updated");
+  }
+
+  componentWillUnmount() {
+    // when component goes away
+    console.log("goodbye world");
+  }
   render() {
+    console.log("render");
     return (
       <div>
         <h1>
