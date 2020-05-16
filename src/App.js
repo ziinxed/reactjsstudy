@@ -28,7 +28,8 @@ function Food({ name, image, rating }) {
 }
 
 Food.propTypes = {
-  // name should be proptypes
+  // typechecking with proptypes
+  // name(food.~~~) should be proptypes
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
