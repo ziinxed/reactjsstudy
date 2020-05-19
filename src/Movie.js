@@ -16,7 +16,7 @@ function Movie({
       <div className="movie__data">
         <h3 className="movie__title">{title}</h3>
         <h5 className="movie__year">{year}</h5>
-        <ul className="genres">
+        <ul className="movie__genres">
           {genres.map((genre, index) => (
             <li key={index} className="genres__genre">
               {genre}
@@ -30,6 +30,7 @@ function Movie({
     </div>
   );
 }
+//string 관련 함수를 인라인으로 처리 _ 개쩔
 
 Movie.propTypes = {
   id: PropTypes.number.isRequired,
